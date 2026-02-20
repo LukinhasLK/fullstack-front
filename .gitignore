@@ -1,0 +1,15 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Angular
+dist/
+.angular/cache/
+*.js.map
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
