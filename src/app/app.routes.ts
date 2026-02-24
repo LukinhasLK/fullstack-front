@@ -33,6 +33,28 @@ export const routes: Routes = [
     loadComponent: () => import('./features/admin/admin.component').then(m => m.AdminComponent)
   },
   {
+    path: 'cozinha',
+    children: [
+      {
+        path: 'login',
+        loadComponent: () => import('./features/cozinha/login-restaurante/login-restaurante.component').then(m => m.LoginRestauranteComponent)
+      },
+      {
+        path: 'cadastro',
+        loadComponent: () => import('./features/cozinha/cadastro-restaurante/cadastro-restaurante.component').then(m => m.CadastroRestauranteComponent)
+      },
+      {
+        path: 'dashboard',
+        loadComponent: () => import('./features/cozinha/dashboard/dashboard-cozinha.component').then(m => m.DashboardCozinhaComponent)
+      },
+      {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
+      }
+    ]
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }
